@@ -1,0 +1,1 @@
+O javascript é usado em aplicações Frontend para manipular o HTML, tonrando as páginas web fiquem mais dinâmicas, como imagens que se alteram a cada intervalo de tempo, animações e gráficos interativos, fazendo com que um site deixe de ser apenas diversas caixas estáticas. O javascript também pode ser utilizado para processar formulários.
