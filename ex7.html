@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .personagem{
+            height: 50%;
+            width: 50%;
+        }
+
+        .container-imagem{
+
+            height: 50vh;
+            width: 60vh;
+
+            padding-bottom: 40px;
+        }
+        .container{
+
+            height: 10vh;
+            width: 10;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-imagem">
+        <img class="personagem" src="imagens/gravityFalls.png" alt="Personagem Gravity Falls">
+    </div>
+        <div class="container">
+            <div>
+                <p class="fala"></p>
+                <p class="fala2"></p>
+            </div>
+        </div>
+        
+        
+    <script>
+        let personagem = document.querySelector(".personagem")
+        let containerImagem = document.querySelector(".container-imagem")
+        let fala = document.querySelector(".fala")
+
+        containerImagem.addEventListener("mouseenter", () => {
+            fala.innerText = "Você está chegando muito perto!"
+        })
+
+        containerImagem.addEventListener("mouseleave", () => {
+            fala.innerText = "Assim está melhor"
+        })
+
+        personagem.addEventListener("mousemove", () => {
+            fala.innerText = "Isso faz cócegas!!"
+        })
+
+        personagem.addEventListener("click" , () => {
+            fala.innerText = "Isso doi!"
+        })
+
+    </script>
+</body>
+</html>

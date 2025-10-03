@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return processarFormulario()">
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome...">
+        <input type="text" name="email" id="email" placeholder="Digite seu email...">
+        <input type="password" name="senha" id="senha" placeholder="Crie uma senha...">
+        <input type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Confirme sua senha..."> 
+        <input type="submit" name="enviar" id="enviar" value="Enviar">
+    </form>
+
+    <div>
+        <input type="checkbox" onclick="mostrarSenha()">Mostrar Senha
+    </div>
+    <script>
+        let nome = document.querySelector("#nome")
+        let email = document.querySelector("#email")
+        let senha = document.querySelector("#senha")
+        let confirmacaoSenha = document.querySelector("#confirmacaoSenha")
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        const senhaRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/
+        function processarFormulario(){
+            if(nome.value.length < 3){
+                alert("O nome deve ter ao menos 3 caracteres.")
+                return false
+            }
+
+            if(!emailRegex.test(email.value)){
+                alert("Você deve inserir um email válido")
+                return false
+            }
+
+            if(senha.value.length < 8){
+                alert("Sua senha deve ter ao menos 8 caracteres.")
+                return false
+            }
+            else if(!senhaRegex.test(senha.value)){
+                alert("Sua senha deve ter ao menos uma letra maiúscula, um número e um caracter especial.")
+                return false
+            }
+
+            if(senha.value !== confirmacaoSenha.value){
+                alert("As senhas não batem.")
+                return false
+            }
+
+            alert("Formulário enviado com sucesso!")
+            return true
+        }
+
+        function mostrarSenha(){
+            if(senha.type === "password"){
+                senha.type = "text"
+                confirmacaoSenha.type = "text"
+            }
+
+            else{
+                senha.type = "password"
+                confirmacaoSenha.type = "password"
+            }
+        }
+    </script>
+</body>
+</html>

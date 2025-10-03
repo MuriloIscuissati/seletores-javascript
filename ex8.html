@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <input type="text" name="sorvete" id="sorvete" placeholder="Digite um sabor de sorvete">
+
+    <button class="botao">MODO ESCURO</button>
+
+    <div class="mostrador">
+
+
+
+    </div>
+    <script>
+        let input = document.querySelector("#sorvete")
+        let mostrador = document.querySelector(".mostrador")
+        let botao = document.querySelector(".botao")
+        let body = document.querySelector("body")
+
+        input.addEventListener("input", () => {
+            if(input.value == "chocolate"){
+                mostrador.innerHTML = "<h1>Eu amo sorvete de chocolate!</h1>"
+            }
+
+            else{
+                if(input.value == "flocos"){
+                    mostrador.innerHTML = "<h1>Ahh, mas chocolate é o meu favorito...</h1>"
+                }
+
+                else{
+                    mostrador.innerHTML = "<h1>Ahh, eu esperava um sabor de sorvete...</h1>"
+                }
+            }
+        })
+        
+        botao.addEventListener("click", () => {
+
+
+            if(botao.innerText == "MODO ESCURO"){
+                
+                botao.innerText = "MODO CLARO"
+
+                body.style.backgroundColor = 'black'
+                body.style.color = 'gray'
+
+                botao.style.backgroundColor = 'gray'
+                botao.style.color = 'black'
+
+                input.style.backgroundColor = 'black'
+                input.style.color = 'gray'
+            }
+
+            else if(botao.innerText == "MODO CLARO"){
+
+            
+                botao.innerText = "MODO ESCURO"
+
+                body.style.backgroundColor = 'white'
+                body.style.color = 'black'
+
+                botao.style.backgroundColor = '#f0f0f0'
+                botao.style.border.color = 'gray'
+                botao.style.color = 'black'
+
+                input.style.backgroundColor = 'white'
+                input.style.color = 'black'
+            }
+            
+        })
+    </script>
+</body>
+</html>

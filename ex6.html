@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="botao">Gerador de nomes de aventura</button>
+
+    <div class="nomeGerado"></div>
+    <script>
+        const titles = ["Sr.", "Mister", "Dom", "Lord", "Lady", "Capitão", "Dama"]
+        const names = ["Arthur", "Gwendolyn", "Merlin", "Lancelot", "Morgana", "Ragnar", "Éowyn"]
+        const classes = ["Mago", "Paladino", "Arqueiro", "Ladino", "Bárbaro", "Feiticeiro", "Cavaleiro"]
+        const locations = ["Valfenda", "Gondor", "Asgard", "Camelot", "Nárnia", "Babilônia", "Atlantis"]
+
+        let botao = document.querySelector(".botao")
+        
+        let nomeGerado = document.querySelector(".nomeGerado")
+
+        function gerador(){
+
+            let numero = Math.random() * 6 
+            return Math.floor(numero)
+        }
+
+        botao.addEventListener('click', () => {
+            
+            console.log("Entrou no evento" + gerador())
+            let titulo = titles[gerador()]
+            let nome = names[gerador()]
+            let classe =  classes[gerador()]
+            let localizacao = locations[gerador()]
+
+            let nomeHeroi = document.createElement("p")
+
+            nomeHeroi.innerText = titulo + " " + nome + " " + classe + " " + localizacao
+
+            nomeGerado.appendChild(nomeHeroi)
+            
+            
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="lista">
+
+    </ul>
+
+    <button class="botao">Você será brutalmente adicionado</button>
+    
+    <script>
+        let lista = document.querySelector(".lista")
+        let botao = document.querySelector(".botao")
+        let contador = 0;
+
+        botao.addEventListener('click', () => {
+            contador ++
+
+            let elemento = document.createElement('li');
+
+            elemento.innerText = "Item n°" + contador
+
+            lista.appendChild(elemento)
+
+    
+        })
+    </script>
+</body>
+</html>

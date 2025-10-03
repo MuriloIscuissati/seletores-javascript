@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            color: rebeccapurple;
+            font-size: 100px;
+        }
+
+        .aparencia{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Ego cogito, Ego sum</h1>
+
+    <script>
+        let titulo = document.querySelector(".titulo")
+
+        setInterval(() => {
+            titulo.innerText = 'Seu título foi hackeado.';
+
+            titulo.classList.add('aparencia')
+
+            titulo.style.fontSize = 30 + Math.random() * 70 + 'px';
+            
+        }, 5000)
+        
+
+    </script>
+</body>
+</html>
